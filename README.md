@@ -12,3 +12,15 @@ The ESP32 folder contains the C++ code for the sender node and the receiver node
 - Adafruit SSD1306
 - Adafruit Unified Sensor
 - RTClib
+
+## CSI
+The CSI folder contains Python code for calculating PCA and ACF of raw CSI data, code for examining the results in different ways, and code for training and reporting on an SVM
+- calculate_pca.py: takes raw data and filters it, performs PCA and then takes ACFs of the first 5 PCAs, before saving the result to a file
+- analyse_pca.py: a commandline tool for examining the calculated ACFs in various ways
+- train_svm.py: extracts class data from the annotations files attached to measurements, then trains an SVM based on that, before reporting on the SVM's performance
+
+## IMU
+The IMU folder contains Python code for calculating AHRS and then ACF on raw IMU data. This is all in one file, preprocess_imu.py
+
+## ML
+The ML folder contains a local Python script, plot_motion_stats.py, for plotting the results of running the trained model in the Jupyter notebooks
